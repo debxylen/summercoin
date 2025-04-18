@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$SUMMER: SummerCoin</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#FF6B35', secondary: '#FFD166' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preload" as="image" href="bg.png">
+    <link rel="preload" as="image" href="summer.jpg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FF6B35;
+            border-radius: 4px;
+            margin-right: 10px;
+            position: relative;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #FF6B35;
+        }
+
+        .custom-checkbox:checked:after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body class="w-screen h-screen overflow-x-hidden relative">
+    <main class="w-screen h-screen md:scroll-smooth md:snap-y md:snap-mandatory md:overflow-y-scroll">
+        <!-- Hero Section -->
+        <section class="md:snap-center relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0"
+                style="background-image: url('bg.png'); background-size: cover; background-position: center;"></div>
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+            <div class="fade-in container mx-auto px-6 relative z-20 w-full">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="relative">
+                        <div
+                            class="w-80 h-80 mx-auto mb-8 bg-primary/20 backdrop-blur-xl rounded-full flex items-center justify-center transform hover:scale-110 transition-transform border-4 border-primary relative float overflow-hidden group">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 animate-spin-slow">
+                            </div>
+                            <img src="summer.jpg">
+                        </div>
+                        <div
+                            class="absolute -top-4 -right-4 w-12 h-12 bg-secondary rounded-full flex items-center justify-center animate-pulse">
+                            <span class="text-2xl">🌡️</span>
+                        </div>
+                    </div>
+                    <div class="bg-black/25 rounded-2xl p-10">
+                        <h1
+                            class="text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-4 animate-gradient">
+                            $SUMMER</h1>
+                        <p class="text-xl md:text-2xl mb-8 text-white">Sleep tight. Mosquitos bite. SummerCoin takes
+                            flight.<span class="animate-pulse inline-block">🩸</span></p>
+                        <p class="text-md md:text-lg mb-8 text-white/90">Sweaty sheets. Buzzing mosquitoes. Zero sleep.
+                            SummerCoin is a memecoin tribute to the true seasonal villain—those boiling nights where the
+                            fan’s useless, the air’s thick, and sleep is a myth. It’s pain, suffering, and
+                            vibes—tokenized. No AC? At least pump.</p>
+                        <div class="space-y-6">
+                            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                                <a href="https://www.magicmint.fun/token/A3HqrkSDbrB5pJrDu5vFJtAi4DbuP5Rjf1r1jUfhKiDv?interval=3600000"
+                                    class="inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 !rounded-button font-bold text-xl hover:opacity-90 transition-opacity sm:whitespace-nowrap group">
+                                    🥵 Buy or Die Sweating
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @keyframes spin-slow {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                @keyframes gradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    50% {
+                        background-position: 100% 50%;
+                    }
+
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                .animate-spin-slow {
+                    animation: spin-slow 20s linear infinite;
+                }
+
+                .animate-gradient {
+                    background-size: 200% 200%;
+                    animation: gradient 3s ease infinite;
+                }
+
+                @keyframes float {
+
+                    0%,
+                    100% {
+                        transform: translateY(0);
+                    }
+
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                }
+
+                .float {
+                    animation: float 6s ease-in-out infinite;
+                }
+
+                .fade-in {
+                    opacity: 1;
+                    animation-name: fadeIn;
+                    animation-iteration-count: 1;
+                    animation-timing-function: ease-in;
+                    animation-duration: 0.5s;
+                }
+            </style>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="md:snap-center py-20 bg-black relative overflow-hidden">
+            <div class="absolute inset-0 opacity-30">
+                <div class="absolute w-64 h-64 bg-primary/20 rounded-full blur-3xl -top-20 -left-20 animate-pulse">
+                </div>
+                <div
+                    class="absolute w-64 h-64 bg-secondary/20 rounded-full blur-3xl -bottom-20 -right-20 animate-pulse delay-1000">
+                </div>
+            </div>
+            <div class="container mx-auto px-6 relative">
+                <div class="flex flex-col items-center mb-16">
+                    <div
+                        class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-6 transform hover:rotate-180 transition-transform duration-1000">
+                        <span class="text-4xl">🧠</span>
+                    </div>
+                    <h2
+                        class="text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        What is $SUMMER?</h2>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div
+                            class="bg-zinc-900/50 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl mr-4">🥵</span>
+                                <h3 class="text-xl font-bold text-primary">The Origin Story</h3>
+                            </div>
+                            <p class="text-lg">$SUMMER isn't just another memecoin... it's what happens when a dev gets
+                                bitten by 69 mosquitoes during a heatwave while watching charts. (True story, trust me
+                                bro)
+                            </p>
+                        </div>
+                        <div
+                            class="bg-zinc-900/50 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="flex items-center mb-4">
+                                <span class="text-4xl mr-4">🦟</span>
+                                <h3 class="text-xl font-bold text-primary">The Experience</h3>
+                            </div>
+                            <p class="text-lg">Imagine: You're lying there at 3 AM, sweating like SafeMoon's legal team,
+                                while a mosquito does technical analysis on your forehead. That's the $SUMMER
+                                experience™
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-8 bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg border border-yellow-500/20">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <span class="text-4xl">⚠️</span>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-yellow-500 mb-2">SIDE EFFECTS</h3>
+                                <ul class="space-y-2 text-lg">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                                        Uncontrollable urges to buy electric fans
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                                        Mosquito-related nightmares
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                                        Severe FOMO
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                                        DYOR (Degen Your Own Repellent)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="md:snap-center py-20 bg-zinc-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 text-center">📈 Roadmap <span class="text-primary">(aka "The
+                        Heatstroke
+                        Plan")</span></h2>
+                <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div
+                        class="bg-black/50 p-8 rounded-lg border border-zinc-800 hover:border-primary transition-colors transform hover:scale-105 transition-transform">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mr-4 flex-shrink-0">
+                                <span class="text-2xl">Q1</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Launch token during the hottest day ever 🌡️</h3>
+                                <p class="text-zinc-400">Status: Devs got heatstroke but we made it</p>
+                                <span class="text-green-400 text-xl">✅ DONE (pls send water)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-black/50 p-8 rounded-lg border border-zinc-800 hover:border-primary transition-colors transform hover:scale-105 transition-transform">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mr-4 flex-shrink-0">
+                                <span class="text-2xl">Q2</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Create mosquito DAO 🦟</h3>
+                                <p class="text-zinc-400">Status: They're better at governance than us</p>
+                                <span class="text-green-400 text-xl">✅ BZZZZ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-black/50 p-8 rounded-lg border border-zinc-800 hover:border-primary transition-colors transform hover:scale-105 transition-transform">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mr-4 flex-shrink-0">
+                                <span class="text-2xl">Q3</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">No AC? Atleast Pump.</h3>
+                                <p class="text-zinc-400">Status: $SUMMER pumps even if the heat jumps.</p>
+                                <span class="text-yellow-400 text-xl">🔄 IN PROGRESS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-black/50 p-8 rounded-lg border border-zinc-800 hover:border-primary transition-colors transform hover:scale-105 transition-transform">
+                        <div class="flex items-start mb-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mr-4 flex-shrink-0">
+                                <span class="text-2xl">Q4</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Partner with global warming 🌍</h3>
+                                <p class="text-zinc-400">Status: Earth said "bet"</p>
+                                <span class="text-red-400 text-xl">🔥 INEVITABLE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="md:snap-center py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 text-center">👥 Fake Testimonials</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div
+                        class="bg-zinc-900 p-8 rounded-lg border border-zinc-800 hover:border-primary transition-colors">
+                        <div class="text-5xl text-primary mb-6">"</div>
+                        <p class="text-lg mb-6">"Sold my AC to buy $SUMMER. My family left me."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                                <i class="ri-user-line text-primary"></i>
+                            </div>
+                            <p class="font-medium">– A real idiot</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-900 p-8 rounded-lg border border-zinc-800 hover:border-primary transition-colors">
+                        <div class="text-5xl text-primary mb-6">"</div>
+                        <p class="text-lg mb-6">"Instructions unclear, accidentally became a mosquito influencer. 100k
+                            followers on BuzzFeed."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                                <i class="ri-user-line text-primary"></i>
+                            </div>
+                            <p class="font-medium">– Some guy who left his window open</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-900 p-8 rounded-lg border border-zinc-800 hover:border-primary transition-colors">
+                        <div class="text-5xl text-primary mb-6">"</div>
+                        <p class="text-lg mb-6">"After launch, 3 mosquitoes offered to VC fund my next project. I said
+                            yes."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                                <i class="ri-user-line text-primary"></i>
+                            </div>
+                            <p class="font-medium">– Definitely not the dev.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Features Section -->
+        <section class="md:snap-center py-20 bg-black/90 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse absolute -top-48 -right-48">
+                </div>
+                <div class="w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse absolute -bottom-48 -left-48">
+                </div>
+            </div>
+            <div class="container mx-auto px-6 relative">
+                <h2 class="text-4xl font-bold mb-16 text-center">🌡️ Why $SUMMER?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-black/30 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 group">
+                        <div
+                            class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ri-temperature-hot-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">🥵🌡</h3>
+                        <p class="text-zinc-400">Because it’s too hot to think straight. Perfect time to make financial
+                            decisions.</p>
+                    </div>
+                    <div
+                        class="bg-black/30 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 group">
+                        <div
+                            class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ri-virus-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">🦟❌</h3>
+                        <p class="text-zinc-400">Because every time you buy, a mosquito retires from its sucking job.
+                        </p>
+                    </div>
+                    <div
+                        class="bg-black/30 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 group">
+                        <div
+                            class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="ri-nft-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">🧊📉</h3>
+                        <p class="text-zinc-400">Because buying $SUMMER keeps you warm during the crypto winter (2022
+                            flashbacks optional).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tokenomics Section -->
+        <section id="tokenomics" class="md:snap-center py-20 bg-zinc-900 relative overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5"></div>
+                <div class="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse">
+                </div>
+                <div
+                    class="absolute w-96 h-96 bg-secondary/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse delay-700">
+                </div>
+            </div>
+            <div class="container mx-auto px-6 relative">
+                <div class="flex flex-col items-center mb-16">
+                    <div class="relative w-24 h-24 mb-6">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full animate-ping opacity-20">
+                        </div>
+                        <div
+                            class="relative w-full h-full bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
+                            <span class="text-4xl">🔥</span>
+                        </div>
+                    </div>
+                    <h2
+                        class="text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                        Tokenomics
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div
+                        class="group bg-black/30 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="flex items-center justify-center w-16 h-16 mb-6 bg-primary/20 rounded-full group-hover:scale-110 transition-transform">
+                            <i class="ri-coins-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Total Supply</h3>
+                        <p class="text-3xl font-bold text-center text-primary">
+                            Yes
+                        </p>
+                        <p class="text-sm text-center text-zinc-400 mt-2">
+                            Exists
+                        </p>
+                    </div>
+                    <div
+                        class="group bg-black/30 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="flex items-center justify-center w-16 h-16 mb-6 bg-primary/20 rounded-full group-hover:scale-110 transition-transform">
+                            <i class="ri-fire-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">
+                            Burned Tokens
+                        </h3>
+                        <p class="text-3xl font-bold text-center text-primary">Like my skin</p>
+                        <p class="text-sm text-center text-zinc-400 mt-2">
+                            In the summers
+                        </p>
+                    </div>
+                    <div
+                        class="group bg-black/30 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="flex items-center justify-center w-16 h-16 mb-6 bg-primary/20 rounded-full group-hover:scale-110 transition-transform">
+                            <i class="ri-bug-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">Utility</h3>
+                        <p class="text-3xl font-bold text-center text-primary">∞</p>
+                        <p class="text-sm text-center text-zinc-400 mt-2">
+                            Premium mosquito bait
+                        </p>
+                    </div>
+                    <div
+                        class="group bg-black/30 backdrop-blur-xl p-8 rounded-lg border border-primary/20 hover:border-primary transition-all duration-300 transform hover:-translate-y-2">
+                        <div
+                            class="flex items-center justify-center w-16 h-16 mb-6 bg-primary/20 rounded-full group-hover:scale-110 transition-transform">
+                            <i class="ri-drop-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-center">
+                            Buyer Eligibility
+                        </h3>
+                        <p class="text-3xl font-bold text-center text-primary">
+                            Everyone (??)
+                        </p>
+                        <p class="text-sm text-center text-zinc-400 mt-2">
+                            If you’re sweating, you qualify
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-16 max-w-2xl md:max-w-4xl mx-auto">
+                    <div class="bg-black/30 backdrop-blur-xl p-6 rounded-lg border border-yellow-500/20">
+                        <div class="flex items-center justify-center space-x-4">
+                            <span class="text-2xl">🌡️</span>
+                            <div>
+                                <p class="text-lg text-center text-yellow-500">
+                                    A mosquito repellant and working AC spawns next to you just as you buy.
+                                <p class="text-md text-center text-zinc/50">Source: trust me bro</p>
+                                </p>
+                            </div>
+                            <span class="text-2xl">🔥</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Partners Section -->
+        <section class="md:snap-center py-20 bg-zinc-900 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-16 text-center">🤝 Strategic Partners</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl md:max-w-6xl mx-auto">
+                    <div
+                        class="bg-black/30 backdrop-blur-xl p-6 rounded-lg border border-zinc-800 hover:border-primary transition-all md:flex md:items-center md:gap-2 min-w-0">
+                        <div class="text-4xl">🌡️</div>
+                        <p class="font-bold break-words text-wrap block w-full">Global Warming</p>
+                    </div>
+                    <div
+                        class="bg-black/30 backdrop-blur-xl p-6 rounded-lg border border-zinc-800 hover:border-primary transition-all md:flex md:items-center md:gap-2 min-w-0">
+                        <div class="text-4xl">🦟</div>
+                        <p class="font-bold break-words text-wrap block w-full">MosquitoSwap</p>
+                    </div>
+                    <div
+                        class="bg-black/30 backdrop-blur-xl p-6 rounded-lg border border-zinc-800 hover:border-primary transition-all md:flex md:items-center md:gap-2 min-w-0">
+                        <div class="text-4xl">🧊</div>
+                        <p class="font-bold break-words text-wrap block w-full">BrokenAirConditioner</p>
+                    </div>
+                    <div
+                        class="bg-black/30 backdrop-blur-xl p-6 rounded-lg border border-zinc-800 hover:border-primary transition-all md:flex md:items-center md:gap-2 min-w-0">
+                        <div class="text-4xl">⛱️</div>
+                        <p class="font-bold break-words text-wrap block w-full">Beach DAO (Dolphins and Oysters)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contest Section -->
+        <section id="contest" class="md:snap-center py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-12 text-center">🎨 Crossover Contest</h2>
+                <div class="max-w-3xl mx-auto bg-zinc-900 p-8 rounded-lg border border-zinc-800">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">$TRALALERO x $SUMMER: Heatwave Edition NFTs</h3>
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-primary mr-3">•</span>
+                            <span>2 NFTs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-3">•</span>
+                            <span>2 chances</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-3">•</span>
+                            <span>1 brain cell</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-3">•</span>
+                            <span>Holding % = chance of winning.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-3">•</span>
+                            <span>Vote for $SUMMER at the magicmint.fun memecoin contest</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-3">•</span>
+                            <span>Snapshot after voting ends.</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="https://discord.com/channels/1342143983656370296/1362482568334938112"
+                            class="inline-flex items-center bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap">
+                            Vote for $SUMMER
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="md:snap-center py-20 relative">
+            <div class="absolute inset-0 z-0"
+                style="background-image: url('https://readdy.ai/api/search-image?query=A%20minimalist%2C%20abstract%20representation%20of%20extreme%20summer%20heat%20with%20wavy%20heat%20distortion%20lines%20against%20a%20gradient%20background%20transitioning%20from%20deep%20orange%20to%20dark%20red.%20The%20image%20should%20convey%20the%20feeling%20of%20unbearable%20summer%20heat%20with%20subtle%20mosquito%20silhouettes%20barely%20visible%20in%20the%20background.%20The%20design%20should%20be%20modern%20and%20clean%20with%20a%20dark%20overall%20mood%20to%20match%20a%20crypto%20website%20aesthetic.&width=1920&height=600&seq=2&orientation=landscape'); background-size: cover; background-position: center;">
+            </div>
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to embrace the heat?</h2>
+                    <p class="text-xl mb-10">It’s either $SUMMER or the mosquitoes win.</p>
+                    <a href="https://www.magicmint.fun/token/A3HqrkSDbrB5pJrDu5vFJtAi4DbuP5Rjf1r1jUfhKiDv?interval=3600000"
+                        class="inline-flex items-center bg-primary text-white px-8 py-4 !rounded-button font-bold text-lg hover:bg-primary/90 transition-colors whitespace-nowrap">
+                        <span class="mr-2">🔥</span> Buy $SUMMER Now
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Community Section -->
+        <section class="md:snap-center py-20 bg-black relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-zinc-900/50 p-8 rounded-lg border border-primary/20">
+                        <div class="text-center mb-8">
+                            <h2 class="text-4xl font-bold mb-6">🌴 Join the Heat Wave</h2>
+                            <p class="text-xl">Connect with fellow summer enthusiasts and mosquito whisperers</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+                            <div
+                                class="bg-black/30 backdrop-blur-xl p-6 rounded-lg border border-zinc-800 hover:border-primary transition-all">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                                        <i class="ri-discord-fill ri-2x text-primary"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-xl font-bold">Discord</h3>
+                                        <p class="text-zinc-400">MagicMint community server</p>
+                                    </div>
+                                </div>
+                                <a href="https://discord.gg/S4Kb9myVfv"
+                                    class="inline-flex items-center text-primary hover:text-primary/80">
+                                    Join Server <i class="ri-arrow-right-line ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="bg-black py-12 border-t border-zinc-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-8">
+                    <p class="text-lg mb-6">Built by a dude with heatstrokes and sleep deprivation.</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://x.com/debxylen"
+                            class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-full hover:bg-primary/20 transition-colors">
+                            <i class="ri-twitter-x-fill text-white ri-lg"></i>
+                        </a>
+                        <a href="https://instagram.com/debxylen"
+                            class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-full hover:bg-primary/20 transition-colors">
+                            <i class="ri-instagram-fill text-white ri-lg"></i>
+                        </a>
+                        <a href="https://discord.gg/S4Kb9myVfv"
+                            class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-full hover:bg-primary/20 transition-colors">
+                            <i class="ri-discord-fill text-white ri-lg"></i>
+                        </a>
+                        <a href="https://www.magicmint.fun/token/A3HqrkSDbrB5pJrDu5vFJtAi4DbuP5Rjf1r1jUfhKiDv?interval=3600000"
+                            class="w-12 h-12 flex items-center justify-center bg-zinc-900 rounded-full hover:bg-primary/20 transition-colors">
+                            <i class="ri-rocket-fill text-white ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center text-zinc-500">
+                    <p>☠️ Copyright 2025. Still hot.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
